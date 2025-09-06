@@ -1,6 +1,7 @@
 import { Alert, Platform, ScrollView } from "react-native";
 import Stack from "@/ui/components/Stack";
 import React from "react";
+import { EarthIcon } from "lucide-react-native";
 import List from "@/ui/components/List";
 import Item, { Trailing } from "@/ui/components/Item";
 import Typography from "@/ui/components/Typography";
@@ -192,7 +193,7 @@ const PersonalizationSettings = () => {
             }}
           >
             <Icon size={30}>
-              <Papicons name={"PenAlt"} opacity={0.7} />
+              <EarthIcon width={25} height={25} stroke="#818181" />
             </Icon>
             <Typography variant={"title"}>Language</Typography>
             <Typography variant={"caption"} color={"secondary"}>
