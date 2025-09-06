@@ -29,8 +29,8 @@ const SettingsMagic = () => {
     >
       <SettingsHeader
         color={theme.dark ? "#1a0b14ff" : "#FAD9EC"}
-        title="Activer Magic+"
-        description="Optimise automatiquement l’organisation de tes tâches pour améliorer ta productivité"
+        title={t('Settings_MagicPlus_Enable')}
+        description={t('Settings_MagicPlus_Description_Optimization')}
         imageSource={require("@/assets/images/magic.png")}
         onSwitchChange={(isSwitchOn) => mutateProperty("personalization", { magicEnabled: !settingsStore.magicEnabled })}
         switchValue={settingsStore.magicEnabled}
