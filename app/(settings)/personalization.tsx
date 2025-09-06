@@ -14,13 +14,16 @@ import LinearGradient from "react-native-linear-gradient";
 import adjust from "@/utils/adjustColor";
 import { useAccountStore } from "@/stores/account";
 import { useSettingsStore } from "@/stores/settings";
+import { useTranslation } from "react-i18next";
 import { t } from "i18next";
+import i18n from "@/utils/i18n";
 import { router } from "expo-router";
 import { useHeaderHeight } from "@react-navigation/elements";
 
 
 const PersonalizationSettings = () => {
   const theme = useTheme();
+  const { t, i18n } = useTranslation()
 
   const store = useAccountStore.getState();
   const settingsStore = useSettingsStore(state => state.personalization);
@@ -181,6 +184,20 @@ const PersonalizationSettings = () => {
             <Typography variant={"caption"}
               color={"secondary"}
             >{t("Settings_Personalization_Subject_Description")}</Typography>
+          </Item>
+          <Item
+            onPress={() => {
+              const newLang = i18n.language === "fr" ? "en" : "fr";
+              i18n.changeLanguage(newLang);
+            }}
+          >
+            <Icon size={30}>
+              <Papicons name={"PenAlt"} opacity={0.7} />
+            </Icon>
+            <Typography variant={"title"}>Language</Typography>
+            <Typography variant={"caption"} color={"secondary"}>
+              {i18n.language === "fr" ? "Français" : "English"}
+            </Typography>
           </Item>
         </List>
       </ScrollView>

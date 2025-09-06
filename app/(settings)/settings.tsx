@@ -129,8 +129,8 @@ const SettingsIndex = () => {
   }> = [
       {
         icon: <Papicons name={"Palette"} />,
-        title: "Personnalisation",
-        description: "Thèmes, matières...",
+        title: t('Settings_Personalization_Title_Card'),
+        description: t('Settings_Personalization_Subtitle_Card'),
         color: "#17C300",
         onPress: () => {
           router.navigate("/(settings)/personalization")
